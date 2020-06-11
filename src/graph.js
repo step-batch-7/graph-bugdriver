@@ -16,7 +16,7 @@ const createAdjacencyList = function(adjacencyList, pair) {
 const bfs = function(pairs, source, target) {
   const adjacencyList = pairs.reduce(createAdjacencyList, {});
   const visitedNodes = [];
-  const nodesToVisit = adjacencyList[source];
+  const nodesToVisit = adjacencyList[source] && [...adjacencyList[source]];
   let currentNodetoVisit;
   while (nodesToVisit && nodesToVisit.length != 0) {
     currentNodetoVisit = nodesToVisit.shift();

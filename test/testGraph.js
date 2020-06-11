@@ -22,6 +22,16 @@ describe('#bfs', function() {
     const to = 'c';
     assert.isFalse(graph.bfs(pairs, from, to));
   });
+  it('should check if directly connected to node', function() {
+    const pairs = [
+      ['a', 'b'],
+      ['b', 'a'],
+      ['c', 'b']
+    ];
+    const from = 'a';
+    const to = 'b';
+    assert.isTrue(graph.bfs(pairs, from, to));
+  });
   it('should give false if path not found between two nodes', function() {
     const pairs = [
       ['a', 'b'],
